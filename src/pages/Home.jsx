@@ -2,7 +2,7 @@ import TaskManagement from '../components/TaskManagement';
 
 export default function Home() {
     return (
-        <div>
+        <div className=''>
             <TaskManagement />
         </div>
     );

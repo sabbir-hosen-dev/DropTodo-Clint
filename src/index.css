@@ -1,84 +1,68 @@
 @import 'tailwindcss';
-
 @plugin 'tailwindcss-animate';
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    --background: hsl(30, 89%, 96%); /* Light warm background */
-    --foreground: hsl(28, 70%, 12%); /* Dark brownish foreground */
-
-    --card: hsl(30, 100%, 95%);
-    --card-foreground: hsl(28, 70%, 12%);
-
-    --popover: hsl(0, 0%, 100%);
-    --popover-foreground: hsl(28, 70%, 12%);
-
-    --primary: #f2732b; /* Vibrant orange - main color */
-    --primary-foreground: hsl(30, 100%, 98%);
-
-    --secondary: hsl(28, 85%, 85%); /* Soft pastel orange */
-    --secondary-foreground: hsl(28, 70%, 12%);
-
-    --muted: hsl(28, 85%, 85%);
-    --muted-foreground: hsl(28, 50%, 40%);
-
-    --accent: hsl(180, 65%, 40%); /* Teal for contrast */
-    --accent-foreground: hsl(30, 100%, 98%);
-
-    --destructive: hsl(0, 80%, 50%); /* Strong red for delete/warning */
-    --destructive-foreground: hsl(30, 100%, 98%);
-
-    --border: hsl(28, 45%, 80%);
-    --input: hsl(28, 45%, 80%);
-    --ring: #f2732b;
+    /* Light Theme (GitHub Light) */
+    --background: #ffffff;
+    --foreground: #24292e;
+    --card: #ffffff;
+    --card-foreground: #24292e;
+    --popover: #ffffff;
+    --popover-foreground: #24292e;
+    --primary: #0366d6; /* GitHub's primary blue */
+    --primary-foreground: #ffffff;
+    --secondary: #f6f8fa;
+    --secondary-foreground: #24292e;
+    --muted: #f6f8fa;
+    --muted-foreground: #6a737d;
+    --accent: #0366d6; /* GitHub's accent blue */
+    --accent-foreground: #ffffff;
+    --destructive: #d73a49; /* GitHub's red for errors */
+    --destructive-foreground: #ffffff;
+    --border: #e1e4e8;
+    --input: #e1e4e8;
+    --ring: #0366d6;
 
     /* Task Status Colors */
-    --chart-1: hsl(120, 70%, 40%); /* Completed - Green */
-    --chart-2: hsl(40, 90%, 55%); /* In Progress - Yellow */
-    --chart-3: hsl(0, 80%, 50%); /* Overdue - Red */
-    --chart-4: hsl(217, 85%, 50%); /* Planned - Blue */
-    --chart-5: hsl(267, 75%, 65%); /* On Hold - Purple */
+    --chart-1: #28a745; /* Completed - Green */
+    --chart-2: #ffd33d; /* In Progress - Yellow */
+    --chart-3: #d73a49; /* Overdue - Red */
+    --chart-4: #0366d6; /* Planned - Blue */
+    --chart-5: #6f42c1; /* On Hold - Purple */
 
     --radius: 0.6rem;
 }
 
-/* Dark Mode */
+/* Dark Theme (GitHub Dark) */
 .dark {
-    --background: hsl(27, 78%, 9%);
-    --foreground: hsl(30, 100%, 98%);
-
-    --card: hsl(30, 60%, 18%);
-    --card-foreground: hsl(30, 100%, 98%);
-
-    --popover: hsl(30, 50%, 20%);
-    --popover-foreground: hsl(30, 100%, 98%);
-
-    --primary: #f2732b;
-    --primary-foreground: hsl(30, 100%, 98%);
-
-    --secondary: hsl(28, 40%, 25%);
-    --secondary-foreground: hsl(30, 100%, 98%);
-
-    --muted: hsl(28, 40%, 25%);
-    --muted-foreground: hsl(28, 30%, 60%);
-
-    --accent: hsl(180, 65%, 40%);
-    --accent-foreground: hsl(30, 100%, 98%);
-
-    --destructive: hsl(0, 65%, 40%);
-    --destructive-foreground: hsl(30, 100%, 98%);
-
-    --border: hsl(28, 40%, 25%);
-    --input: hsl(28, 40%, 25%);
-    --ring: #f2732b;
+    --background: #0d1117;
+    --foreground: #c9d1d9;
+    --card: #0d1117;
+    --card-foreground: #c9d1d9;
+    --popover: #161b22;
+    --popover-foreground: #c9d1d9;
+    --primary: #58a6ff; /* GitHub's primary blue for dark mode */
+    --primary-foreground: #0d1117;
+    --secondary: #161b22;
+    --secondary-foreground: #c9d1d9;
+    --muted: #21262d;
+    --muted-foreground: #8b949e;
+    --accent: #58a6ff;
+    --accent-foreground: #0d1117;
+    --destructive: #f85149; /* GitHub's red for errors in dark mode */
+    --destructive-foreground: #0d1117;
+    --border: #30363d;
+    --input: #30363d;
+    --ring: #58a6ff;
 
     /* Task Status Colors */
-    --chart-1: hsl(120, 70%, 45%);
-    --chart-2: hsl(40, 85%, 55%);
-    --chart-3: hsl(0, 75%, 50%);
-    --chart-4: hsl(217, 85%, 55%);
-    --chart-5: hsl(267, 75%, 65%);
+    --chart-1: #3fb950; /* Completed - Green */
+    --chart-2: #d29922; /* In Progress - Yellow */
+    --chart-3: #f85149; /* Overdue - Red */
+    --chart-4: #58a6ff; /* Planned - Blue */
+    --chart-5: #8a63d2; /* On Hold - Purple */
 }
 
 @theme inline {

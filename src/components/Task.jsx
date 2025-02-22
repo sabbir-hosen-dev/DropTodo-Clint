@@ -49,7 +49,7 @@ const Task = ({ id, task, onDelete, onEdit }) => {
                                 type="text"
                                 value={editedTitle}
                                 onChange={e => setEditedTitle(e.target.value)}
-                                className="w-full"
+                                className="w-full cursor-pointer"
                             />
                         ) : (
                             <CardTitle>{task.title}</CardTitle>

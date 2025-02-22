@@ -8,18 +8,34 @@ export default function Header() {
     const { logout, user, loading } = useAuth();
 
     return (
-        <header className="flex items-center justify-between px-4 py-3 bg-primary/10 ">
+        <header className="flex items-center justify-between px-6 py-4 bg-background border-b border-border">
+            {/* Left Side: Logo and App Name */}
             <Link to={'/'} className="no-underline">
-                <div className="h-10 flex items-center gap-1.5">
-                    <img src="/TickTask.svg" alt="TickTask" className="h-full" />
-                    <h1>TickTask</h1>
+                <div className="h-10 flex items-center gap-2">
+                
+                    <h1 className="text-xl font-bold text-foreground">DropTask</h1>
                 </div>
             </Link>
-            <div className="flex gap-2">
+
+            {/* Right Side: Theme Toggle and Logout Button */}
+            <div className="flex items-center gap-3">
+                {/* Theme Toggle */}
                 <ModeToggle />
-                {(loading || user) && (
-                    <Button onClick={logout} variant="outline" size="icon" disabled={loading}>
-                        {loading ? <LoaderCircle className="animate-spin" /> : <LogOut />}
+
+                {/* Logout Button (Conditional Rendering) */}
+                {user && (
+                    <Button
+                        onClick={logout}
+                        variant="ghost"
+                        size="icon"
+                        className="hover:bg-secondary/50"
+                        disabled={loading}
+                    >
+                        {loading ? (
+                            <LoaderCircle className="h-4 w-4 animate-spin" />
+                        ) : (
+                            <LogOut className="h-4 w-4" />
+                        )}
                     </Button>
                 )}
             </div>
