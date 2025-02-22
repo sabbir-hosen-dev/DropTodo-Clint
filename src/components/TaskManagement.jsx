@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {
     DndContext,
     closestCenter,
@@ -16,9 +16,10 @@ import axiosInstance from '../utils/axiosInstence';
 import { io } from 'socket.io-client';
 import { useAuth } from '../contexts/AuthContext';
 import Task from './Task';
+import { TaskContext } from '@/contexts/TaskContext';
 
 const TaskManagement = () => {
-    const [tasks, setTasks] = useState([]);
+    const { tasks, setTasks } = useContext(TaskContext);
     const [socket, setSocket] = useState(null);
     const [activeTask, setActiveTask] = useState(null); // Track the currently dragged task
     const { user } = useAuth();

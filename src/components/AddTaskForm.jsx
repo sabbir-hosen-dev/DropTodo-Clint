@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axiosInstance from '../utils/axiosInstence';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -10,12 +10,27 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import { useAuth } from '../contexts/AuthContext';
+import { TaskContext } from '@/contexts/TaskContext';
 
 const AddTaskForm = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('To-Do');
     const { user } = useAuth();
+    const {  setTasks } = useContext(TaskContext);
+
+    console.log(user)
+    const fetchTasks = async () => {
+        try {
+            const response = await axiosInstance.get('/api/tasks', {
+                params: { userId: user?.uid }, // Pass the user ID
+            });
+            setTasks(response.data);
+        } catch (error) {
+            console.error('Failed to fetch tasks:', error);
+        }
+    };
+
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -37,6 +52,10 @@ const AddTaskForm = () => {
             setTitle('');
             setDescription('');
             setCategory('To-Do');
+
+            fetchTasks()
+      
+
         } catch (error) {
             console.error('Failed to create task:', error);
         }
