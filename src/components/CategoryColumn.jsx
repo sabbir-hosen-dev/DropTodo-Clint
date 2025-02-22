@@ -8,10 +8,10 @@ const CategoryColumn = ({ id, title, tasks, onDelete, onEdit }) => {
     return (
         <div
             ref={setNodeRef}
-            className="flex-1 p-4 bg-card rounded-lg min-h-[200px] border border-border"
+            className="flex-1  bg-card rounded-lg min-h-[200px] border border-border"
         >
-            <h2 className="text-card-foreground text-sm text-end mb-4">{title}</h2>
-            <div className="space-y-2">
+            <h2 className="text-card-foreground py-2 text-sm text-center border-b mb-4">{title}</h2>
+            <div className="space-y-2 p-2">
                 <SortableContext items={tasks.map(task => task._id)}>
                     {tasks.map(task => (
                         <Task

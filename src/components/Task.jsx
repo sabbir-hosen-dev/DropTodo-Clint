@@ -41,7 +41,7 @@ const Task = ({ id, task, onDelete, onEdit }) => {
     };
 
     return (
-        <div ref={setNodeRef} style={style} {...attributes} className="mb-4">
+        <div ref={setNodeRef} style={style} {...attributes} className="mb-2">
             <Card className="bg-muted border border-border">
                 <CardHeader className="flex flex-row items-center justify-between">
                     <div className="flex items-center gap-2">
