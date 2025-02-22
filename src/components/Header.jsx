@@ -28,7 +28,7 @@ export default function Header() {
                         onClick={logout}
                         variant="ghost"
                         size="icon"
-                        className="hover:bg-secondary/50"
+                        className="hover:text-sky-300 cursor-pointer"
                         disabled={loading}
                     >
                         {loading ? (

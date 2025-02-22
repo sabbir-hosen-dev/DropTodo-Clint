@@ -1,8 +1,9 @@
+import { AiOutlineEdit } from "react-icons/ai"; 
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { useState } from 'react';
 import axiosInstance from '../utils/axiosInstence';
-import { Grip, Trash2, FilePenLine } from 'lucide-react';
+import { Grip, Trash2, } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -61,7 +62,8 @@ const Task = ({ id, task, onDelete, onEdit }) => {
                             variant="outline"
                             size="icon"
                         >
-                            <FilePenLine className="h-4 w-4" />
+                           
+                            <AiOutlineEdit  className="h-4 cursor-pointer w-4" />
                         </Button>
                         <Button
                             onClick={() => onDelete(task._id)}

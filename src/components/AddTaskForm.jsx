@@ -93,7 +93,7 @@ const AddTaskForm = () => {
                 </SelectContent>
             </Select>
 
-            <Button type="submit" className="w-full md:w-auto">
+            <Button type="submit" className="w-full cursor-pointer md:w-auto">
                 Add Task
             </Button>
         </form>
