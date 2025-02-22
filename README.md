@@ -5,7 +5,7 @@ Drop-Todo is a simple and efficient task management system that allows users to 
 
 ## Live Link
 
-[Drop Todo](comming soooooooooo)
+[Drop Todo](https://drop-todo.netlify.app/)
 
 ## Features
 - **Task Management**: Add, edit, delete, and reorder tasks.
