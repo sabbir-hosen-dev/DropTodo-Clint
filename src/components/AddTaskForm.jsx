@@ -11,6 +11,8 @@ import {
 } from '@/components/ui/select';
 import { useAuth } from '../contexts/AuthContext';
 import { TaskContext } from '@/contexts/TaskContext';
+import toast from 'react-hot-toast';
+
 
 const AddTaskForm = () => {
     const [title, setTitle] = useState('');
@@ -19,7 +21,7 @@ const AddTaskForm = () => {
     const { user } = useAuth();
     const {  setTasks } = useContext(TaskContext);
 
-    console.log(user)
+    
     const fetchTasks = async () => {
         try {
             const response = await axiosInstance.get('/api/tasks', {
@@ -54,6 +56,8 @@ const AddTaskForm = () => {
             setCategory('To-Do');
 
             fetchTasks()
+            toast.success("Task Added");
+
       
 
         } catch (error) {
@@ -63,6 +67,7 @@ const AddTaskForm = () => {
 
     return (
         <form onSubmit={handleSubmit} className="mb-8 flex flex-col gap-4 md:flex-row">
+           
             <Input
                 type="text"
                 placeholder="Title"
